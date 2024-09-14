@@ -7,8 +7,11 @@
 ```
 ssh-keygen -t rsa
 ```
-id_rsa.pubに記載されている内容をGitHub右上の設定ページ(Settings)より、SSH and GPG keysの項目を探して、追加する。
-
+#### id_rsa.pubに記載されている内容をGitHub右上の設定ページ(Settings)より、SSH and GPG keysの項目を探して、追加する。
+#### 以下コマンドを実行して、問題ない旨の応答が返ってくればOK。
+```
+ssh -T git@github.com
+```
 
 
 ### commitでバージョンが確定。
