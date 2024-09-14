@@ -38,9 +38,31 @@ git merge issue1 # issue1で更新した内容でmainのbranchがアップデー
 git branch -d issue1 # issue1 branchを削除する
 git branch # issue1 が無くなっていることが確認できる。
 ```
+
 ### branchを用いたチーム開発(並行作業)
 #### 以下のコマンドで、2つのブランチを作成できる
 ```
 git chekcout -b issue2
 git checkout -b issue3
 ```
+=======
+
+### gitで複数branchをmergeしていく
+#### 各々のbranchでcommit
+```
+git checkout issue2
+git add .
+git commit -m "upd2"
+git checkout issue3
+git add .
+git commit -m "upd3"
+```
+#### mainブランチに移動して、
+```
+git checkout main
+git merge issue2 # <- まずissue2のbranchから統合
+git merge issue3 # <- 次にissue3のbranchを統合(衝突している旨がでた場合、その解決が必要)
+```
+
+
+>>>>>>> issue3
