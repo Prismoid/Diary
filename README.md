@@ -1,7 +1,7 @@
 # Diary
 ## 2024年9月14日これはテスト日記です。
 
-## GitHubを使う上で重要なこと
+## GitHubを使う上で重要なこと(参考:https://backlog.com/ja/git-tutorial/stepup/12/)
 ### commitでバージョンが確定。
 ```
 git init
