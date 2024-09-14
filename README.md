@@ -2,6 +2,15 @@
 ## 2024年9月14日これはテスト日記です。
 
 ## GitHubを使う上で重要なこと(参考:https://backlog.com/ja/git-tutorial/stepup/12/)
+### まずリモートリポジトリの認証が必須！！(参考: https://www.kikagaku.co.jp/kikagaku-blog/github-access-token/)
+#### ssh-keygenを使って、rsa暗号用秘密鍵を作成する
+```
+ssh-keygen -t rsa
+```
+id_rsa.pubに記載されている内容をGitHub右上の設定ページ(Settings)より、SSH and GPG keysの項目を探して、追加する。
+
+
+
 ### commitでバージョンが確定。
 ```
 git init
