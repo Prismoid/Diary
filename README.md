@@ -28,4 +28,9 @@ git commit -m "commit名"
 ```
 
 ### gitでbranchをmergeする方法
+```
+git checkout main # 元のmainのbranchに戻る
+git merge issue1 # issue1で更新した内容でmainのbranchがアップデートされる。
+```
 
+### 
