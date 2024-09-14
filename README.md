@@ -33,8 +33,14 @@ git checkout main # 元のmainのbranchに戻る
 git merge issue1 # issue1で更新した内容でmainのbranchがアップデートされる。
 ```
 
-### 
+### gitでbranchを削除する
 ```
 git branch -d issue1 # issue1 branchを削除する
 git branch # issue1 が無くなっていることが確認できる。
+```
+
+### gitで複数のbranchをmergeしていく(衝突解決)
+```
+git merge issue2
+git merge issue3 # <- ここで競合が発生するので修正が必要
 ```
