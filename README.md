@@ -15,3 +15,17 @@ git push -u origin main # mainブランチとしてpush、更新する。
 ```
 git pull origin main
 ```
+
+### gitでbranchの作成とcheckoutの行い方
+```
+git checkout issue1
+git checkout -b issue1 # branchのcheckoutと作成を同時に行う
+```
+#### branch上でのcommitが可能
+```
+git add .
+git commit -m "commit名"
+```
+
+### gitでbranchをmergeする方法
+
