@@ -34,3 +34,7 @@ git merge issue1 # issue1で更新した内容でmainのbranchがアップデー
 ```
 
 ### 
+```
+git branch -d issue1 # issue1 branchを削除する
+git branch # issue1 が無くなっていることが確認できる。
+```
