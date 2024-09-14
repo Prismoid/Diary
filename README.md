@@ -33,8 +33,17 @@ git checkout main # 元のmainのbranchに戻る
 git merge issue1 # issue1で更新した内容でmainのbranchがアップデートされる。
 ```
 
-### 
+### gitでbranchを削除する
 ```
 git branch -d issue1 # issue1 branchを削除する
 git branch # issue1 が無くなっていることが確認できる。
 ```
+
+### branchを用いたチーム開発(並行作業)
+#### 以下のコマンドで、2つのブランチを作成できる
+```
+git chekcout -b issue2
+git checkout -b issue3
+```
+
+
