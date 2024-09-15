@@ -14,4 +14,4 @@ echo $SHELL
 ~/.bash_profile
 ```
 
-### 適当に作成したzsh設定ファイルfilesの中にある
+### 適当に作成したzsh設定ファイルは、本レポジトリのfilesの中にある
