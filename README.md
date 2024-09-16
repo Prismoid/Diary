@@ -13,6 +13,12 @@ ssh-keygen -t rsa
 ssh -T git@github.com
 ```
 
+#### また、commit時のエラーを防ぐため、以下のように適当なユーザ名を設定しておくと良い。
+```
+git config --global user.name someone
+git config --global user.email someone@example.jp
+```
+
 
 ### commitでバージョンが確定。
 ```
