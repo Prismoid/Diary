@@ -1,0 +1,26 @@
+# WireGuardクライアントの設定方法
+
+## Ubuntuでデバイス接続する場合:
+### 最初にWireGuardソフトウェアをインストールする
+```
+$ sudo apt-get install wireguard
+```
+
+### 続いて /etc/wireguard/wg0.conf を以下のように編集する
+```
+[Interface]
+PrivateKey = クライアントの秘密鍵
+Address = 10.0.0.2 (クライアントのIPアドレス)
+
+[Peer]
+PublicKey = サーバーの公開鍵
+EndPoint = サーバーのIPアドレス:51820
+AllowedIPs = 10.0.0.0/24 (WireGuardを経由して通信する先のIPアドレス)
+```
+
+### 最後に、以下のコマンドでクライアントからVPNへ接続する。
+```
+$ wg-quick up wg0
+```
+
+
