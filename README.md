@@ -19,6 +19,7 @@ ssh -T git@github.com
 git init
 git add .
 git commit -m "First Commit"
+git branch -M main # ブランチをmainで指定
 git remote add origin git@github.com:Prismoid/Diary #  Remoteのレポジトリを指定(認証が必須)
 git push -u origin main # mainブランチとしてpush、更新する。
 ```
