@@ -15,6 +15,23 @@ docker images -a
 docker volume ls
 ```
 
+## 簡単なDockerコンテナ作成の例
+### ファイルサーバを立ち上げる一例である。
+```
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data:/usr/share/nginx/html
+```
+### 次のcURLコマンドでdataディレクトリにあるファイル(例えばtest.txt)を確認可能
+```
+curl http://localhost:8080/test.txt
+```
+
+
 ## M3 MacBookでDocker Desktopを使っていて起きた問題一覧
 ### credentialsの問題 -> Docker Desktop (右上のSign inから再ログインする)
 ### 命令セットアーキテクチャ(Instruction Set Architecture)に対応していることが重要。Intel Macではamd64というアーキテクチャのCPUが載っている。一方、M1 MACではarm64と呼ばれる、スマホやタブレット向けの米ARM社仕様のCPUが載っている。イメージファイルもamd64、arm64の２種のCPUアーキテクチャに対応しているケースが多いが、片方にしか対応しないパターンも多い。このため、dockerは、マルチアーキテクチャサポート機能を持っている。下記のように、イメージをbuild前にCPUアーキテクチャを指定できるのである。
