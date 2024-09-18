@@ -34,7 +34,9 @@ curl http://localhost:8080/test.txt
 
 ## M3 MacBookでDocker Desktopを使っていて起きた問題一覧
 ### credentialsの問題 -> Docker Desktop (右上のSign inから再ログインする)
-### 命令セットアーキテクチャ(Instruction Set Architecture)に対応していることが重要。Intel Macではamd64というアーキテクチャのCPUが載っている。一方、M1 MACではarm64と呼ばれる、スマホやタブレット向けの米ARM社仕様のCPUが載っている。イメージファイルもamd64、arm64の２種のCPUアーキテクチャに対応しているケースが多いが、片方にしか対応しないパターンも多い。このため、dockerは、マルチアーキテクチャサポート機能を持っている。下記のように、イメージをbuild前にCPUアーキテクチャを指定できるのである。
+### 命令セットアーキテクチャ(Instruction Set Architecture)に対応していることが重要。Intel Macではamd64というアーキテクチャのCPUが載っている。
+### 一方、M1 MACではarm64と呼ばれる、スマホやタブレット向けの米ARM社仕様のCPUが載っている。イメージファイルもamd64、arm64の２種のCPUアーキテクチャに対応しているケースが多いが、片方にしか対応しないパターンも多い。
+### このため、dockerは、マルチアーキテクチャサポート機能を持っている。下記のように、イメージをbuildする前にCPUアーキテクチャを指定できるのである。
 ```
 mysql:
   image: mysql:5.7
