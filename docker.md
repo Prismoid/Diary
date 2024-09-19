@@ -26,6 +26,24 @@ services:
     volumes:
       - ./data:/usr/share/nginx/html
 ```
+### 次のコマンドでコンテナを起動(compose.ymlがデフォルト指定)
+```
+docker compose up -d
+```
+### コンテナを立ち上げた同一ディレクトリで以下コマンドで停止
+```
+docker compose stop
+```
+### 再開方法
+```
+docker compose start
+```
+### コンテナを削除する方法
+```
+docker compose down
+```
+
+
 ### 次のcURLコマンドでdataディレクトリにあるファイル(例えばtest.txt)を確認可能
 ```
 curl http://localhost:8080/test.txt
