@@ -15,6 +15,11 @@ docker images -a
 docker volume ls
 ```
 
+### この際、cannot stop container, permission deniedと表示されたら、以下コマンドでdocker systemの再起動をする
+```
+sudo systemctl restart docker.socket docker.service
+```
+
 ## 簡単なDockerコンテナ作成の例
 ### ファイルサーバを立ち上げる一例である。
 ```
