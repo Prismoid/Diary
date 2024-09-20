@@ -3,10 +3,15 @@
 - CKAN_SITE_URL
   - `http://localhost:8443`
 
-## シャットダウン時に再開すべきシステム一覧
+## 再起動時に再開すべきシステム一覧
+### CKAN
 ```
 cd ${WORKDIR}/ckan-docker
 docker compose up -d
+```
+### DNS
+```
+service named start
 ```
 
 ## シャットダウン時に停止すべきシステム一覧
