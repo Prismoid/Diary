@@ -3,7 +3,7 @@
 - CKAN_SITE_URL
   - `http://localhost:8443`
 
-## 停止するシステム一覧
+## シャットダウン時に停止すべきシステム一覧
 ### CKAN
 ```
 cd ${WORKDIR}/ckan-docker
