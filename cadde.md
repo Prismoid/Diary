@@ -2,3 +2,12 @@
 ## CKAN(提供者)の環境設定
 - CKAN_SITE_URL
   - `http://localhost:8443`
+
+## 停止するシステム一覧
+### CKAN
+```
+cd ${WORKDIR}/ckan-docker
+docker compose stop
+```
+
+### 
