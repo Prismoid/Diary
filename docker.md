@@ -75,3 +75,12 @@ mysql:
     - MYSQL_PASSWORD=hogefuga1111
     - TZ=Asia/Tokyo
 ```
+
+## イメージファイルが見つからないエラーの対処法
+```
+=> ERROR [internal] load metadata for docker.io/library/python:3.10.7
+```
+上のようなエラーが出た場合、事前にイメージファイルをpullしておくと、上手くいくことがある。
+```
+docker pull docker.io/library/python:3.10.7
+```
