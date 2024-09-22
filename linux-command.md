@@ -5,4 +5,8 @@
 find <ディレクトリ> -type f | xargs grep <検索する文字列>
 ```
 
+## 特定のキーワードを含んでいる行を抽出
+```
+docker image ls | grep keycloak
+```
 

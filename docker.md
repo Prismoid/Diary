@@ -84,3 +84,19 @@ mysql:
 ```
 docker pull docker.io/library/python:3.10.7
 ```
+
+## Dockerをビルド時に名前解決できずにエラーが出る場合の対処方法(Ubuntu22.04)
+### 例えば、以下のエラーが出た場合である。
+```
+Error response from daemon: Get "https://registry-1.docker.io/v2/": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: read udp 127.0.0.1:39423->127.0.0.53:53: i/o timeout
+```
+
+### `/etc/systemd/resolved.conf`に以下を追記すると、名前解決されるようになる。おそらく、これはDockerのバグである。
+```
+DNS=8.8.8.8
+DNS=1.1.1.1
+```
+#### この際、以下のコマンドで設定を反映させることを忘れないようにする。
+```
+systemctl restart systemd-resolved
+```
