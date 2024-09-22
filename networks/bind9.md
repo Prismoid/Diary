@@ -24,15 +24,18 @@ service named reload (キャッシュを削除せずに、設定変更を反映�
 ```
 
 ## Ubuntuでローカルで動いているDNSサーバを参照するには `/etc/systemd/resolve.conf`を編集して以下のようにする。
+### 上から順に該当する名前解決が可能であれば、実行する
 ``` 
 DNS=127.0.0.1
+DNS=8.8.8.8
+DNS=1.1.1.1
 ```
 ### 注意点として、他のLinuxのように`/etc/resolve.conf`を編集しないこと。Ubuntuではこの設定は無視される模様。この設定読み込みのため、以下のコマンドを実行すること。
 ```
 systemctl restart systemd-resolved
 ```
 
-## Zoneファイルの設定(Aレコードで単純な名前解決)。`/etc/bind/example.com.zone`を編集。
+## Zoneファイルの設定(Aレコードで単純な名前解決)。`/etc/bind/example.com.zone`を編集。(admin@example.comが連絡先となる)
 ```
 $TTL 86400
 @    IN  SOA  ns1.example.com. admin.example.com. (
@@ -60,9 +63,15 @@ zone "example.com" {
     file "/etc/bind/example.com.zone";
 };
 ```
-### 上記の設定後にリロードを忘れないようにする。すると、`nslookup`コマンドを利用して、以下のように名前解決できる。
+### 上記の設定後にリロードを忘れないようにする。すると、`nslookup`コマンドを利用して、以下のように名前解決できる。(192.168.0.200はDNSサーバが動いているマシンのアドレス)
 ```
-nslookup example.com
+nslookup example.com 192.168.0.200
 ```
 
 #### ※これらはドメイン毎にゾーンファイルを作成して管理する必要がある。(SOA(Start of Authority)がドメインに対して一意であるといった理由から)
+
+## ゾーンファイルの書式の正しさの確認(第二引数はファイルへのパス)
+### 問題がなければ下記コマンドを実行後にOKと出力される。
+```
+sudo named-checkzone example.com.zone /etc/bind/example.com.zone
+```
