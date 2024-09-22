@@ -27,3 +27,8 @@ $ wg-quick up wg0
 ```
 sudo ln -s /usr/bin/resolvectl /usr/local/bin/resolvconf
 ```
+
+### WireGuardの状態を確認
+```
+wg show
+```
