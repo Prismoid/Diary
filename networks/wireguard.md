@@ -7,6 +7,7 @@ $ sudo apt-get install wireguard
 ```
 
 ### 続いて /etc/wireguard/wg0.conf を以下のように編集する
+#### DNSを追加する場合は、その順番が重要である
 ```
 [Interface]
 PrivateKey = クライアントの秘密鍵
