@@ -64,3 +64,5 @@ zone "example.com" {
 ```
 nslookup example.com
 ```
+
+#### ※これらはドメイン毎にゾーンファイルを作成して管理する必要がある。(SOA(Start of Authority)がドメインに対して一意であるといった理由から)
