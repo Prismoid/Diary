@@ -64,6 +64,3 @@ zone "example.com" {
 ```
 nslookup example.com
 ```
-
- 
-

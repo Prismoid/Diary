@@ -28,6 +28,11 @@ $ wg-quick up wg0
 sudo ln -s /usr/bin/resolvectl /usr/local/bin/resolvconf
 ```
 
+### WireGuardのNIC(wg0)の停止方法
+```
+wg-quick down wg0
+```
+
 ### WireGuardの状態を確認
 ```
 wg show

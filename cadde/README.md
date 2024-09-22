@@ -9,9 +9,19 @@
 cd ${WORKDIR}/ckan-docker
 docker compose up -d
 ```
+### 提供者コネクタ
+```
+cd ${WORKDIR}/klab-connector-v4/src/provider
+sh ./start.sh
+```
+
 ### DNS
 ```
 service named start
+```
+### WireGuard
+```
+wg-quick up wg0
 ```
 
 ## シャットダウン時に停止すべきシステム一覧
@@ -21,8 +31,18 @@ cd ${WORKDIR}/ckan-docker
 docker compose stop
 ```
 
+### 提供者コネクタ
+```
+cd ${WORKDIR}/klab-connector-v4/src/provider
+sh ./stop.sh
+```
+
 ### DNS
 ```
 service named stop
 ```
 
+### WireGuard
+```
+wg-quick down wg0
+```
