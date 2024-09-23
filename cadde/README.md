@@ -96,3 +96,16 @@ cd ${WORKDIR}/klab-connector-v4/src/consumer
 sh ./stop.sh
 ```
 
+### WebApp
+#### 起動
+```
+cd ${WORKDIR}/ut-cadde_gui
+docker compose build
+docker compose up -d
+```
+#### 終了
+```
+cd ${WORKDIR}/ut-cadde_gui
+docker compose down
+```
+
