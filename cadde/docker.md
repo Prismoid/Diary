@@ -18,7 +18,35 @@ docker compose up -d
 sudo systemctl restart docker.socket docker.service
 ```
 
-## データベースなどのボリュームも削除する場合
+## データベースなどの永続的なボリューム、孤立しているネットワーク設定も削除する場合
 ```
-docker compose down --volumes
+docker compose down --volumes --remove-orphans
+```
+
+## Dockerビルドキャッシュの削除
+```
+docker builder prune
+```
+
+## Docker未使用リソースの一括削除
+```
+docker system prune --volumes
+```
+
+## 不要なボリュームの削除
+```
+docker volume ls
+docker volume rm <volume_name>
+```
+
+## 不要なネットワークの削除
+```
+docker network ls
+docker network rm <network_name>
+```
+
+## ポートを使用しているプロセスの確認と削除
+```
+sudo lsof -i :8443
+sudo kill <PID>
 ```
