@@ -27,6 +27,7 @@ service named reload (キャッシュを削除せずに、設定変更を反映�
 ### 上から順に該当する名前解決が可能であれば、実行する
 ``` 
 DNS=127.0.0.1
+DNS=10.250.1.2
 DNS=8.8.8.8
 DNS=1.1.1.1
 ```
@@ -75,4 +76,28 @@ nslookup abc.example.com 192.168.0.200
 ### 問題がなければ下記コマンドを実行後にOKと出力される。
 ```
 sudo named-checkzone example.com.zone /etc/bind/example.com.zone
+```
+
+## 名前管理の委任（ゾーンファイルへの記述）
+```
+$TTL 86400
+@    IN  SOA  ns1.example.com. admin.example.com. (
+            2023092101 ; Serial
+            3600       ; Refresh (1 hour)
+            1800       ; Retry (30 minutes)
+            1209600    ; Expire (2 weeks)
+            86400      ; Minimum TTL (1 day)
+)
+
+; ネームサーバの定義
+@    IN  NS   ns1.example.com.
+sub  IN  NS   ns1.sub.example.com.;サブドメインを管理する名前サーバ
+
+; Aレコード（ドメインを192.168.0.200に関連付け）
+@    IN  A    192.168.0.200
+ns1  IN  A    192.168.0.200
+abc  IN  A    192.168.0.201
+ns1.sub.example.com IN A 192.168.1.200;別のNSに名前解決を依頼することを意味する
+
+; その他のAレコードやCNAMEを追加する場合はここに記述
 ```
