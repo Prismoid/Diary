@@ -12,3 +12,13 @@ cd ${WORKDIR}/ckan-docker
 docker compose build
 docker compose up -d
 ```
+
+## cannot stop container, permission deniedと表示されたら、以下コマンドでdocker systemの再起動をする
+```
+sudo systemctl restart docker.socket docker.service
+```
+
+## データベースなどのボリュームも削除する場合
+```
+docker compose down --volumes
+```
