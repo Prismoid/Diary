@@ -24,6 +24,18 @@ wg-quick up wg0
 wg-quick down wg0
 ```
 
+### HTTPサーバ(提供者)
+#### 開始
+```
+cd ${WORKDIR}/private-http-server
+docker compose up -d
+```
+#### 終了
+```
+cd ${WORKDIR}/private-http-server
+docker compose stop
+```
+
 ### CKAN
 #### 開始
 ```
