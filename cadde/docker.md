@@ -1,4 +1,4 @@
-# CADDE環境構築中に発生したエラーなどについて
+# CADDE環境構築中にA発生したエラーなどについて
 ## CKANのコンテナが上手く停止できなかった場合は、下記のコマンドで全てのコンテナを削除
 ```
 cd ${WORKDIR}/ckan-docker
@@ -49,4 +49,14 @@ docker network rm <network_name>
 ```
 sudo lsof -i :8443
 sudo kill <PID>
+```
+
+# 提供者コネクタのコンテナ立ち上げに失敗した場合、以下を実行してから`./start.sh`スクリプトを実行する。
+```
+docker compose down --volumes --remove-orphans
+sudo lsof -i :443
+sudo kill <PID>
+sudo lsof -i :80
+sudo kill <PID>
+sudo systemctl restart docker.socket docker.service
 ```
