@@ -24,7 +24,8 @@ systemctl restart systemd-resolved
 127.0.0.1    www.example.com
 ```
 
-#### ※ この際、dig, nslookup, そして host コマンドは /etc/hosts を参照しない。ping で確かめること。
+#### ※ この際、dig, nslookup, そして host コマンドは /etc/hosts を参照しない
+#### 従って、ping コマンドやブラウザで適切に名前解決できているか確かめること。
 ```
 ping example.com
 ```
