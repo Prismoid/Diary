@@ -16,3 +16,15 @@ DNS=1.1.1.1
 ```
 systemctl restart systemd-resolved
 ```
+
+## MACでローカルで名前解決する方法
+### `/etc/hosts`ファイルを編集する。例えば、以下のようにする。
+```
+127.0.0.1    example.com
+127.0.0.1    www.example.com
+```
+
+#### ※ この際、dig, nslookup, そして host コマンドは /etc/hosts を参照しない。ping で確かめること。
+```
+ping example.com
+```
