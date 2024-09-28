@@ -53,7 +53,7 @@ sudo kill <PID>
 
 # 提供者コネクタのコンテナ立ち上げに失敗した場合、以下を実行してから`./start.sh`スクリプトを実行する。
 ```
-docker compose down --volumes --remove-orphans
+docker compose down  --volumes --remove-orphans # --rmi all をオプションとしてつけると全てのコンテナが消える
 sudo lsof -i :443
 sudo kill <PID>
 sudo lsof -i :80
