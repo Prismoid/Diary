@@ -1,6 +1,6 @@
-# Docker Composeの使い方についてメモ
+# Docker Composeの使い方についてメモOA
 
-## サンプルとするHTTPサーバ(Flask実装)
+## サンプルとするHTTPサーバ(Flask実装、[こちらのWebsite](https://snowsystem.net/container/docker/python-flask-demo/#)を参考
 ### ディレクトリ構成(treeコマンドで表示。brewやaptでインストール可)
 
 ```txt
@@ -57,4 +57,26 @@ Hello
 {{ name }}さん。
 </body>
 </html>
+```
+
+#### `Dockerfile` (これをベースにイメージからビルド、コンテナを作成する)
+
+```txt
+# python 3.12 をベースにDockerイメージを作成
+FROM python:3.12
+
+# 作業ディレクトリを指定
+WORKDIR /app
+
+# カレントディレクトリのファイルをDockerコンテナの｢/app｣ ディレクトリにコピー
+ADD . /app
+
+# Flaskをインストール
+RUN pip install Flask
+
+# 外部に公開するポートを指定
+EXPOSE 8000
+
+# コンテナの実行コマンドを指定
+CMD ["python", "app.py"]
 ```
