@@ -49,14 +49,6 @@ if __name__ == "__main__":
 
 ```html
 <html>
-<title>docker demo flask</title>
-<head></head>
-<body>
-トップページです。
-</body>
-</html>
-(mypy) h-seike: docker_demo_flask/ % cat templates/hello.html 
-<html>
 <head>
 <title>{{ title }}</title>
 </head>
