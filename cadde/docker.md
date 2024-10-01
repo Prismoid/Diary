@@ -60,3 +60,15 @@ sudo lsof -i :80
 sudo kill <PID>
 sudo systemctl restart docker.socket docker.service
 ```
+
+# CADDE環境構築を再度行う場合...
+
+Dockerの再起動
+```
+sudo systemctl restart docker
+```
+
+DNSの再設定
+```
+sudo systemctl restart systemd-resolved
+```
