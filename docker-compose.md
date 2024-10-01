@@ -3,12 +3,14 @@
 ## サンプルとするHTTPサーバ(Flask実装)
 ### ディレクトリ構成(treeコマンドで表示。brewやaptでインストール可)
 
+```txt
 .
 ├── Dockerfile
 ├── app.py
 └── templates
     ├── hello.html
     └── index.ht
+```
 
 ### 各種ファイルについて解説
 
