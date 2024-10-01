@@ -14,6 +14,8 @@
 
 ### 各種ファイルについて解説
 
+#### `app.py`
+
 ```python
 from flask import Flask, render_template
 
@@ -29,4 +31,38 @@ def hello(name):
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=8000)
+```
+
+#### `templates/index.html`
+
+```html
+<html>
+<title>docker demo flask</title>
+<head></head>
+<body>
+トップページです。
+</body>
+</html>
+```
+
+#### `templates/hello.html`
+
+```html
+<html>
+<title>docker demo flask</title>
+<head></head>
+<body>
+トップページです。
+</body>
+</html>
+(mypy) h-seike: docker_demo_flask/ % cat templates/hello.html 
+<html>
+<head>
+<title>{{ title }}</title>
+</head>
+<body>
+Hello
+{{ name }}さん。
+</body>
+</html>
 ```
