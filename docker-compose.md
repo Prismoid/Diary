@@ -5,7 +5,8 @@
 
 ```txt
 .
-├── Dockerfile
+├─docker-compose.yml
+├─Do Dockerfile
 ├── app.py
 └── templates
     ├── hello.html
@@ -79,4 +80,11 @@ EXPOSE 8000
 
 # コンテナの実行コマンドを指定
 CMD ["python", "app.py"]
+```
+
+#### `docker-compose.yaml` (これを用いることで、複数のコンテナを同時に立ち上げたりできる)
+
+```yaml
+
+
 ```

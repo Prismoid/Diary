@@ -29,3 +29,9 @@ systemctl restart systemd-resolved
 ```
 ping example.com
 ```
+
+### MacbookのDNSのキャッシュをリセットする方法
+
+```bash
+sudo killall -HUP mDNSResponde
+```
